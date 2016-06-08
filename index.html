@@ -4,83 +4,40 @@
 	<meta charset="utf-8">
 
 	<title>Musicians</title>
-
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+	<!-- Linking Javscript to HTML -->
+	<script type = 'text/javascript' src='javascript/javascript.js'></script>
 	<!-- So it can be neatly viewed on phones -->
 	<meta name="viewport" content="width=device-width", inital-scale=1>
 	<!-- linking jquery to html -->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-</script>
-
+	<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+	<!-- linking css to html -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-
-
-<style>
-
-body{
-	background-color:darkgreen;
-}
-
-h1{
-	text-align:center;
-	color:lightgreen;
-}
-
-label{
-	color:lightgreen;
-	font-size:20px;
-	margin:5px;
-}
-
-button{
-	padding:5px;
-	margin:5px;
-}
-
-</style>
-
 
 <body>
 
 	<h1>Put in your favorites bands!</h1>
 
+	<!-- tells user to type in any band -->
+	<label for="music-input">Search for any band: </label>
+	
+	<input type="text" name="username">
+
 <div class='container'>
-	<div id=buttons>
-		<button>Sublime</button>
-		<button>Green Day</button>
-		<button>Rolling Stones</button>
-		<button>Blink-182</button>
-		<button>Pink Floyd</button>
+    <div id="images"></div>
+		<button class="band">Sublime</button>
+		<button class="band">Green Day</button>
+		<button class="band">Rolling Stones</button>
+		<button class="band">Blink-182</button>
+		<button class="band">Pink Floyd</button>
 	</div>
 </div>
 	<br/>
 
-	<!-- tells user to type in any band -->
-	<label for="music-input">Search for any band: </label>
-
 	<!-- label for user to input any band -->
 	<span id="gifsAppearHere"></span>
-	
-	<input type="text" name="username">
 
-	<!-- Linking html to javascript -->
-	<script type="text/javascript">
-	
-$('button').on('click', function(){
-	var musicians= $(this).data('musicians');
-	var queryUrl= "https://github.com/Giphy/GiphyAPI" +
-		musician + "dc6zaTOxFJmzC";
-
-		$.ajax({
-			url: queryUrl,
-			method: 'GET'
-		});
-		.done(function(response)}
-		console.log(response)
-			);
-});
-
-</script>
 </body>
+
 </html>
