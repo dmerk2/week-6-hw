@@ -28,8 +28,15 @@
 
 			//prepend puts the images in the beginning
 			$("#images").append(musicians);
-		
+			
 			//NEED EMPTY BUTTON
+			$('button').click(function(event){
+				$("#clearButton").empty()
+
+			return false
+			});
+		
+			
 		});
 	});
 };
