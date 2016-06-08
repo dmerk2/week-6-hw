@@ -14,11 +14,9 @@
 		})
 		//recieving information from giphy
 		.done(function(response) {
-		console.log("response");
 
 			//returns the response from the website
 			var results = response.data;
-			console.log("results");
 			
 			//img calls for the set variable
 			var musicians = $("<img>");
@@ -31,7 +29,7 @@
 			//prepend puts the images in the beginning
 			$("#images").append(musicians);
 		
-
+			//NEED EMPTY BUTTON
 		});
 	});
 };

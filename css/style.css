@@ -5,15 +5,27 @@ body{
 h1{
 	text-align:center;
 	color:lightgreen;
+	font-family: 'Permanent Marker', cursive;
+	font-size:40px;
 }
 
 label{
 	color:lightgreen;
 	font-size:20px;
 	margin:5px;
+	font-family: 'Anton', sans-serif;
 }
 
 button{
 	padding:5px;
 	margin:10px;
+	font-family: 'Dosis', sans-serif;
+	font-size:15px;
+	background-color:darkblue; 
+	color:darkorange;
+}
+
+button:hover{
+	font-size:22px;
+	background-color:lightblue;
 }
