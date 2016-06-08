@@ -1,3 +1,4 @@
+	//when window loads ... function will happen
 	window.onload = function(){  
 
 	//When I click this button a function will happen
@@ -28,9 +29,11 @@
 			musicians.attr('alt', 'musicians');
 
 			//prepend puts the images in the beginning
-			$("#images").prepend(musicians);
-
+			$("#images").append(musicians);
 		
+
 		});
 	});
 };
+
+
