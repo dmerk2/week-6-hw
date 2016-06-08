@@ -30,8 +30,8 @@
 			$("#images").append(musicians);
 			
 			//NEED EMPTY BUTTON
-			$('button').click(function(event){
-				$("#clearButton").empty()
+			$('#clearButton').click(function(event){
+				$('img').remove()
 
 			return false
 			});
