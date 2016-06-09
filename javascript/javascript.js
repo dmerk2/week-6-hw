@@ -5,7 +5,7 @@
 	$('.band').on('click', function(){
 
 	//variable queryUrl for giphy
-	var queryUrl = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=musicians&limit=10";
+	var queryUrl = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag&limit=10";
 
 		//requesting information giphy
 		$.ajax({
@@ -34,9 +34,8 @@
 				$('img').remove()
 
 			return false
+
 			});
-		
-			
 		});
 	});
 };
