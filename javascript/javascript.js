@@ -33,16 +33,28 @@
 			$('#clearButton').click(function(event){
 				$('img').remove()
 
-			//whatever musician the user submits will appear
-			$('#submitButton').click(function(event){
+			// //loops for user to submit musicians 
+			// for(i=0; i< results.length; i++){
+			// 	var musicians=$('<button>');
+			// 	musicians.text(movies[i]);
+			// 	musicians.appendTo('#musicians')
+			// };
 
+			
+
+			// //whatever musician the user submits will appear
+			// $('#submitButton').on('click', function(){
+			// 	var input=$('#submitButton').val();
+			// 	musicians.push(input);
+			// 	renderButtons();
 			});
+
+		});
 
 			return false
 
 			});
-		});
-	});
-};
+		};
+	
 
 
