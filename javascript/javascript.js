@@ -33,6 +33,11 @@
 			$('#clearButton').click(function(event){
 				$('img').remove()
 
+			//whatever musician the user submits will appear
+			$('#submitButton').click(function(event){
+
+			});
+
 			return false
 
 			});
