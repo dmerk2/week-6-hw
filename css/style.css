@@ -30,3 +30,14 @@ button:hover{
 	background-color:lightblue;
 }
 
+audio{
+	margin-right:auto;
+	margin-left:auto;
+	display:block;
+}
+
+img{
+	margin-right:auto;
+	margin-left:auto;
+	display:block;
+}

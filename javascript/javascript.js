@@ -43,6 +43,7 @@
 			var musicians = $("<img>");
 			var imageUrl = response.data.image_original_url; 
 			console.log(img)
+			
 
 			//takes var musicians and adds attr src and imageUrl
 			musicians.attr('src', imageUrl);
