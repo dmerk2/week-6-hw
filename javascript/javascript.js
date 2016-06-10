@@ -1,8 +1,30 @@
 	//when window loads ... function will happen
 	window.onload = function(){  
 
+	var musiciansList = [];
+	var inputBox = $('#submitBox')
+	console.log(submitBox)
+
+	//whatever musician the user submits will appear
+	$('#submitButton').on('click', function(){
+		console.log('calling button');
+		var input=$('#submitButton');
+		var userInput=inputBox.val();
+		musiciansList.push(userInput);
+		console.log(musiciansList)
+		renderButtons();
+		console.log(input)
+	});
+
+	function renderButtons() {
+			var button = $('<button>');
+			button.text(musiciansList[musiciansList.length-1]);
+			button.addClass('band')
+			$('.container').append(button);
+	};
+
 	//When I click this button a function will happen
-	$('.band').on('click', function(){
+	$(document).on('click', '.band', function() {
 
 	//variable queryUrl for giphy
 	var queryUrl = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag&limit=10";
@@ -17,6 +39,7 @@
 
 			//returns the response from the website
 			var results = response.data;
+			console.log(results)
 			
 			//img calls for the set variable
 			var musicians = $("<img>");
@@ -32,29 +55,11 @@
 			//empty gifs button
 			$('#clearButton').click(function(event){
 				$('img').remove()
-
-			// //loops for user to submit musicians 
-			// for(i=0; i< results.length; i++){
-			// 	var musicians=$('<button>');
-			// 	musicians.text(movies[i]);
-			// 	musicians.appendTo('#musicians')
-			// };
-
-			
-
-			// //whatever musician the user submits will appear
-			// $('#submitButton').on('click', function(){
-			// 	var input=$('#submitButton').val();
-			// 	musicians.push(input);
-			// 	renderButtons();
 			});
-
 		});
+	});
+};
 
-			return false
-
-			});
-		};
 	
 
 
