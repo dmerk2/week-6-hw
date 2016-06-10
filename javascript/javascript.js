@@ -3,15 +3,12 @@
 
 	var musiciansList = [];
 	var inputBox = $('#submitBox')
-	console.log(submitBox)
 
 	//whatever musician the user submits will appear
 	$('#submitButton').on('click', function(){
-		console.log('calling button');
 		var input=$('#submitButton');
 		var userInput=inputBox.val();
 		musiciansList.push(userInput);
-		console.log(musiciansList)
 		renderButtons();
 		console.log(input)
 	});
@@ -21,14 +18,15 @@
 			button.text(musiciansList[musiciansList.length-1]);
 			button.addClass('band')
 			$('.container').append(button);
+			
 	};
 
 	//When I click this button a function will happen
 	$(document).on('click', '.band', function() {
 
 	//variable queryUrl for giphy
-	var queryUrl = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag&limit=10";
-
+	var queryUrl = "http://api.giphy.com/v1/gifs/search?q=music&api_key=dc6zaTOxFJmzC&limit=10";
+	console.log(queryUrl)
 		//requesting information giphy
 		$.ajax({
 			url: queryUrl,
@@ -36,30 +34,28 @@
 		})
 		//recieving information from giphy
 		.done(function(response) {
-
+		
 			//returns the response from the website
 			var results = response.data;
-			console.log(results)
+			console.log(response.data);
 			
 			//img calls for the set variable
 			var musicians = $("<img>");
 			var imageUrl = response.data.image_original_url; 
+			console.log(img)
 
 			//takes var musicians and adds attr src and imageUrl
 			musicians.attr('src', imageUrl);
 			musicians.attr('alt', 'musicians');
 
 			//prepend puts the images in the beginning
-			$("#images").append(musicians);
+			$("#images").append(musiciansList);
 			
 			//empty gifs button
 			$('#clearButton').click(function(event){
-				$('img').remove()
+				$("img").remove()
+				
 			});
 		});
 	});
 };
-
-	
-
-
