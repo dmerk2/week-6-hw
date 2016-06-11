@@ -40,9 +40,9 @@
 			console.log(response.data);
 			
 			//img calls for the set variable
-			var musicians = $("<img>");
+			var musicians = $('<img>');
 			var imageUrl = response.data.image_original_url; 
-			console.log(img)
+			$()
 			
 
 			//takes var musicians and adds attr src and imageUrl
@@ -51,6 +51,8 @@
 
 			//prepend puts the images in the beginning
 			$("#images").append(musiciansList);
+			$('<img>').attr('src', imageUrl)
+			
 			
 			//empty gifs button
 			$('#clearButton').click(function(event){
