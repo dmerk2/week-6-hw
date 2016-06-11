@@ -25,8 +25,8 @@
 	$(document).on('click', '.band', function() {
 
 	//variable queryUrl for giphy
-	var queryUrl = "http://api.giphy.com/v1/gifs/search?q=music&api_key=dc6zaTOxFJmzC&limit=10";
-	console.log(queryUrl)
+	var queryUrl = "http://api.giphy.com/v1/gifs/search?q=music&api_key=dc6zaTOxFJmzClimit=10";
+	
 		//requesting information giphy
 		$.ajax({
 			url: queryUrl,
@@ -34,26 +34,23 @@
 		})
 		//recieving information from giphy
 		.done(function(response) {
-		
+			
 			//returns the response from the website
 			var results = response.data;
-			console.log(response.data);
 			
+			var imageUrl = response.data.image_original_url; 
+			
+            //takes var musicians and adds attr src and imageUrl
+            musicians.attr('src', imageUrl);
+            musicians.attr('alt', 'musicians');
+
 			//img calls for the set variable
 			var musicians = $('<img>');
-			var imageUrl = response.data.image_original_url; 
-			$()
-			
-
-			//takes var musicians and adds attr src and imageUrl
-			musicians.attr('src', imageUrl);
-			musicians.attr('alt', 'musicians');
 
 			//prepend puts the images in the beginning
-			$("#images").append(musiciansList);
-			$('<img>').attr('src', imageUrl)
-			
-			
+			$("#images").prepend(musiciansList);
+			$('<img>').attr('src', imageUrl)			
+						
 			//empty gifs button
 			$('#clearButton').click(function(event){
 				$("img").remove()
