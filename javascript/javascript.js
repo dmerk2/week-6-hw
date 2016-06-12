@@ -10,7 +10,6 @@
 		var userInput=inputBox.val();
 		musiciansList.push(userInput);
 		renderButtons();
-		console.log(input)
 	});
 
 	function renderButtons() {
@@ -36,22 +35,24 @@
 			//returns the response from the website
 			var results = response.data;
 			var imageUrl = response.data.image_original_url; 
-			var musicians = $('<img>');
-
-			
+			var musicians = $('<img>');			
 			console.log(queryUrl)
 
             //takes var musicians and adds attr src and imageUrl
             musicians.attr('src', imageUrl);
-            musicians.attr('alt', 'musicians');
+            musicians.attr('alt', 'musician');
+            $("#images").push(imageUrl)
 
 			//prepend puts the images in the beginning
-			$("#images").prepend(musiciansList);
-			$('<img>').attr('src', imageUrl)			
+			$("#images").prepend(imageUrl);
+			$('<img>').val();
+			console.log(results)
+			console.log(imageUrl)	
+
 						
 			//empty gifs button
 			$('#clearButton').click(function(event){
-				$("pic").remove()
+				$(musicians).remove()
 				
 			});
 		});
