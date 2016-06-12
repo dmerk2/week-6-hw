@@ -25,21 +25,22 @@
 	$(document).on('click', '.band', function() {
 
 	//variable queryUrl for giphy
-	var queryUrl = "http://api.giphy.com/v1/gifs/search?music&api_key=dc6zaTOxFJmzC&limit=10";
-					   
+	var queryUrl = "http://api.giphy.com/v1/gifs/search?q=music&api_key=dc6zaTOxFJmzC&limit=10";
+
 		//requesting information giphy
 		$.ajax({
 			url: queryUrl,
 			method: 'GET'
 		})//recieving information from giphy
-		.done(function(response) {
-		
-		console.log(done)
+		.done(function(response) {		
 			//returns the response from the website
 			var results = response.data;
 			var imageUrl = response.data.image_original_url; 
 			var musicians = $('<img>');
+
 			
+			console.log(queryUrl)
+
             //takes var musicians and adds attr src and imageUrl
             musicians.attr('src', imageUrl);
             musicians.attr('alt', 'musicians');
@@ -50,7 +51,7 @@
 						
 			//empty gifs button
 			$('#clearButton').click(function(event){
-				$("img").remove()
+				$("pic").remove()
 				
 			});
 		});
