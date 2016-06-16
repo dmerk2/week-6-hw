@@ -48,13 +48,13 @@
         //prepend puts the images in the beginning
         $("#images").prepend(musicians);
         console.log(results)
-        console.log(musicians)
+        console.log()
     }	
 
 						
 			//empty gifs button
 			$('#clearButton').click(function(event){
-				$('#images').remove()
+				$('#images').empty()
 				
 			});
 		});
