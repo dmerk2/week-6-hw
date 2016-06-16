@@ -1,8 +1,8 @@
-	//when window loads ... function will happen
+//when window loads ... function will happen
 	window.onload = function(){  
 
 	var musiciansList = [];
-	var inputBox = $('#submitBox')
+	var inputBox = $('#submitButton')
 
 	//whatever musician the user submits will appear
 	$('#submitButton').on('click', function(){
@@ -34,20 +34,20 @@
 		.done(function(response) {		
 			//returns the response from the website
 			var results = response.data;
-			var imageUrl = response.data.image_original_url; 
-			var musicians = $('<img>');			
-			console.log(queryUrl)
 
-            //takes var musicians and adds attr src and imageUrl
-            musicians.attr('src', imageUrl);
-            musicians.attr('alt', 'musician');
-            $("#images").push(imageUrl)
+    for(var i = 0; i < response.data.length; i++){
+        var imageUrl = response.data[i].images.fixed_height.url; 
+        var musicians = $('<img>');         
 
-			//prepend puts the images in the beginning
-			$("#images").prepend(imageUrl);
-			$('<img>').val();
-			console.log(results)
-			console.log(imageUrl)	
+        //takes var musicians and adds attr src and imageUrl
+        musicians.attr('src', imageUrl);
+        musicians.attr('alt', 'musician');
+
+        //prepend puts the images in the beginning
+        $("#images").prepend(musicians);
+        console.log(results)
+        console.log(i)
+    }	
 
 						
 			//empty gifs button
