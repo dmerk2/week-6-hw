@@ -2,7 +2,7 @@
 	window.onload = function(){  
 
 	var musiciansList = [];
-	var inputBox = $('#submitButton')
+	var inputBox = $('#submitBox')
 
 	//whatever musician the user submits will appear
 	$('#submitButton').on('click', function(){
@@ -10,6 +10,7 @@
 		var userInput=inputBox.val();
 		musiciansList.push(userInput);
 		renderButtons();
+		console.log(userInput)
 	});
 
 	function renderButtons() {
@@ -18,6 +19,7 @@
 			button.addClass('band')
 			$('.container').append(button);
 			
+			return false;
 	};
 
 	//When I click this button a function will happen
@@ -46,13 +48,13 @@
         //prepend puts the images in the beginning
         $("#images").prepend(musicians);
         console.log(results)
-        console.log(i)
+        console.log(musicians)
     }	
 
 						
 			//empty gifs button
 			$('#clearButton').click(function(event){
-				$(musicians).remove()
+				$('#images').remove()
 				
 			});
 		});
