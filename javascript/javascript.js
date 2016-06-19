@@ -25,8 +25,10 @@
 	//When I click this button a function will happen
 	$(document).on('click', '.band', function() {
 
+
+  var p = $(this).data('bands+singers');
 	//variable queryUrl for giphy
-	var queryUrl = "http://api.giphy.com/v1/gifs/search?q=music&api_key=dc6zaTOxFJmzC&limit=10";
+	var queryUrl = "http://api.giphy.com/v1/gifs/search?q=" + p + "singers+bands&api_key=dc6zaTOxFJmzC&limit=10";
 
 		//requesting information giphy
 		$.ajax({
@@ -43,16 +45,24 @@
 
         //takes var musicians and adds attr src and imageUrl
         musicians.attr('src', imageUrl);
-        musicians.attr('alt', 'musician');
+        musicians.attr('alt', 'musicians');
 
         //prepend puts the images in the beginning
         $("#images").prepend(musicians);
         console.log(results)
-        console.log()
-    }	
 
+			var state = $(this).attr('data-state');
+      if ( state == 'still'){
+          $(this).attr('src', $(this).data('animate'));
+          $(this).attr('data-state', 'animate');
+      }else{
+          $(this).attr('src', $(this).data('still'));
+          $(this).attr('data-state', 'still');
+      }        
+		}	
+				console.log(this)
 						
-			//empty gifs button
+			// empty gifs button
 			$('#clearButton').click(function(event){
 				$('#images').empty()
 				
