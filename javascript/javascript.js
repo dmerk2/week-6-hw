@@ -26,7 +26,7 @@
 	$(document).on('click', '.band', function() {
 
 
-  var p = $(this).data('bands+singers');
+  var p = $(this).text();
 	//variable queryUrl for giphy
 	var queryUrl = "http://api.giphy.com/v1/gifs/search?q=" + p + "singers+bands&api_key=dc6zaTOxFJmzC&limit=10";
 
